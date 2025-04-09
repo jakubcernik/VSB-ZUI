@@ -1,3 +1,8 @@
+note different models used (o1 preview/claude 3.7 Sonnet) in copilot + gpt 4o in web
+
 - refactored the game so its class that is accessible from future solver files
 - needed to fix some functions, edit class constructor
 - tested random solver, works...
+- went into separated chatgpt window and asked what algorithmic solutions do we have
+and what are differences
+- decided to create 3 solvers (snake pattern, greedy search, reinforcement learning)
