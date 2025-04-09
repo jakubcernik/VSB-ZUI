@@ -6,3 +6,5 @@ note different models used (o1 preview/claude 3.7 Sonnet) in copilot + gpt 4o in
 - went into separated chatgpt window and asked what algorithmic solutions do we have
 and what are differences
 - decided to create 3 solvers (snake pattern, greedy search, reinforcement learning)
+- SnakePatternSolver was generated on first try using Claude 3.7 Sonnet
+    - the i told him to edit it so it runs 30 times and returns some basic statistics
