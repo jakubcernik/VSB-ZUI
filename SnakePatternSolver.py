@@ -142,4 +142,4 @@ def run_multiple_games(num_games=30):
 # Run 30 games and collect statistics
 if __name__ == "__main__":
     np.random.seed(42)  # For reproducibility
-    stats = run_multiple_games(300)
+    stats = run_multiple_games(30)

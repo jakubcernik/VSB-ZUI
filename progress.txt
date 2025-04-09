@@ -10,3 +10,4 @@ and what are differences
     - the i told him to edit it so it runs 30 times and returns some basic statistics
     - also added tracking of winning games
     - i ran it 300times with 0 wins
+I wasnt able to implement DQNSolver and MonteCarloSolver
