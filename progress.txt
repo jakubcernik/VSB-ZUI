@@ -1,0 +1,1 @@
+- refactored the game so its class that is accessible from future solver files
