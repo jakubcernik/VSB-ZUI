@@ -1,5 +1,6 @@
 from Game2048 import Game2048
 import numpy as np
+import time
 
 
 class SnakePatternSolver:
@@ -77,6 +78,9 @@ def run_multiple_games(num_games=30):
     max_tiles = []
     wins = 0
 
+    # Měření celkového času
+    start_time = time.time()
+
     for i in range(num_games):
         game = Game2048()
         game.new_game()
@@ -94,6 +98,9 @@ def run_multiple_games(num_games=30):
 
         win_status = "WON" if game_won else "LOST"
         print(f"Game {i + 1}: Score = {score}, Moves = {moves}, Max Tile = {max_tile}, Status = {win_status}")
+
+    # Výpočet celkového času
+    total_time = time.time() - start_time
 
     # Calculate statistics
     win_rate = (wins / num_games) * 100
@@ -114,7 +121,7 @@ def run_multiple_games(num_games=30):
 
     # Print statistics
     print("\n===== STATISTICS =====")
-    print(f"Games played: {num_games}")
+    print(f"Games played: {num_games} in {total_time / 60:.1f} minutes ({total_time / num_games:.1f} seconds/game)")
     print(f"Wins: {wins}/{num_games} ({win_rate:.1f}%)")
     print(f"Average score: {avg_score:.2f}")
     print(f"Average moves: {avg_moves:.2f}")
@@ -135,11 +142,12 @@ def run_multiple_games(num_games=30):
         'scores': scores,
         'moves': moves_list,
         'max_tiles': max_tiles,
-        'tile_distribution': tile_counts
+        'tile_distribution': tile_counts,
+        'total_time': total_time  # Přidáno do výstupu
     }
 
 
 # Run 30 games and collect statistics
 if __name__ == "__main__":
     np.random.seed(42)  # For reproducibility
-    stats = run_multiple_games(30)
+    stats = run_multiple_games(1000)
