@@ -9,15 +9,22 @@ def check_win(grid):
 
 class Game2048:
     def __init__(self):
+        import numpy as np
         self.np = np
-        self.grid = np.zeros((4, 4), dtype=int)
         self.score = 0
+        self.grid = np.zeros((4, 4), dtype=int)
+
+    # add other methods here (move, add_score, etc.)
 
     # adds given value to total score
 
     def add_score(self, val):
         self.score += val
         return self.score
+
+    def move(self, direction):
+        self.grid, self.score = self.play_2048(self.grid, direction, self.score)
+        return self.grid, self.score
 
     # move the grid to the left and update score
     def move_left(self, grid, score):
